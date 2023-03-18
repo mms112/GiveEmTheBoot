@@ -1,0 +1,9 @@
+{
+  "name": "GiveEmTheBoot",
+  "version_number": "1.0.0",
+  "website_url": "https://discord.gg/pdHgy6Bsng",
+  "description": "A valheim mod which empowers the unarmed kick attack. Knockback will send foes in an upward diagonal direction, dependent on their weight.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2100"
+  ]
+}

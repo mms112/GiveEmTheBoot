@@ -1,0 +1,8 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+GiveEmTheBoot.sln.DotSettings.user
+.idea
+.vs
