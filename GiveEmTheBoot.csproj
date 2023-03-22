@@ -119,6 +119,7 @@
         </Content>
         <Content Include="LICENSE.txt"/>
         <Content Include="README.md"/>
+        <Content Include="Thunderstore\CHANGELOG.md"/>
         <Content Include="Thunderstore\icon.png"/>
         <Content Include="Thunderstore\manifest.json"/>
         <Content Include="UpdateManifest.ps1"/>
@@ -159,7 +160,6 @@
     </Target>
     <Target Name="Copy" AfterTargets="GetAssemblyVersion">
         <!--<Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(GamePath)\BepInEx\plugins\$(AssemblyName).dll&quot;" />-->
-        <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;C:\Users\crypt\AppData\Roaming\r2modmanPlus-local\Valheim\profiles\GETEMTOTHEGREEK\BepInEx\plugins\$(AssemblyName).dll&quot;"/>
         <Exec Command="copy /Y &quot;README.md&quot; &quot;Thunderstore\README.md&quot;"/>
     </Target>
     <Target Name="UpdateManifestVersion" AfterTargets="Copy">
@@ -174,14 +174,14 @@
     </Target>
     <Target Name="MakeThunderstorePackage" AfterTargets="UpdateManifestVersion" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <ItemGroup>
-            <PackageFiles Include="$(TargetDir)$(AssemblyName).dll; Thunderstore\README.md; Thunderstore\manifest.json; Thunderstore\icon.png;"/>
+            <PackageFiles Include="$(TargetDir)$(AssemblyName).dll; Thunderstore\README.md; Thunderstore\CHANGELOG.md; Thunderstore\manifest.json; Thunderstore\icon.png;"/>
         </ItemGroup>
         <MakeDir Directories="$(PackageDir)"/>
         <Copy SourceFiles="@(PackageFiles)" DestinationFolder="$(PackageDir)"/>
         <ZipDirectory SourceDirectory="$(PackageDir)" DestinationFile="Thunderstore\$(PackageName).zip" Overwrite="true"/>
         <RemoveDir Directories="$(PackageDir)"/>
     </Target>
-    <!--    <Target Name="MakeNexusPackage" AfterTargets="MakeThunderstorePackage" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<!--        <Target Name="MakeNexusPackage" AfterTargets="MakeThunderstorePackage" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
             <MakeDir Directories="$(ProjectDir)\Nexus" />
             <ItemGroup>
                 <NexusPackageFiles Include="$(TargetDir)$(AssemblyName).dll;" />

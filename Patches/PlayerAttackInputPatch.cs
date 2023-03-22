@@ -20,6 +20,7 @@ namespace GiveEmTheBoot.Patches
                 return;
             }
 
+            if (!__instance.TakeInput()) return;
 
             //Check the kick hotkey first.
             bool kickInput = false;
