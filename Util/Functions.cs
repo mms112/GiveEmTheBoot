@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using BepInEx.Configuration;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class Functions
                 m_gui = Object.Instantiate(DamageText.instance.m_worldTextBase,
                     DamageText.instance.GetComponent<Transform>())
             };
-            worldTextInstance.m_textField = worldTextInstance.m_gui.GetComponent<Text>();
+            worldTextInstance.m_textField = worldTextInstance.m_gui.GetComponent<TMP_Text>();
             DamageText.instance.m_worldTexts.Add(worldTextInstance);
             Color white = new Color(1f, 0.75f, 0f, 1f);
             worldTextInstance.m_textField.color = white;
@@ -32,7 +33,7 @@ public class Functions
 }
 
 public static class KeyboardExtensions
-{ 
+{
     // thank you to 'Margmas' for giving me this snippet from VNEI https://github.com/MSchmoecker/VNEI/blob/master/VNEI/Logic/BepInExExtensions.cs#L21
     // since KeyboardShortcut.IsPressed and KeyboardShortcut.IsDown behave unintuitively
     public static bool IsKeyDown(this KeyboardShortcut shortcut)

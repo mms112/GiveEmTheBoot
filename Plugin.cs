@@ -15,7 +15,7 @@ namespace GiveEmTheBoot
     public class GiveEmTheBootPlugin : BaseUnityPlugin
     {
         internal const string ModName = "GiveEmTheBoot";
-        internal const string ModVersion = "1.0.1";
+        internal const string ModVersion = "1.0.3";
         internal const string Author = "Azumatt";
         private const string ModGUID = Author + "." + ModName;
         private static string ConfigFileName = ModGUID + ".cfg";
