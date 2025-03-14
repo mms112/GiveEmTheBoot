@@ -15,7 +15,7 @@ namespace GiveEmTheBoot
     public class GiveEmTheBootPlugin : BaseUnityPlugin
     {
         internal const string ModName = "GiveEmTheBoot";
-        internal const string ModVersion = "1.0.3";
+        internal const string ModVersion = "1.0.5";
         internal const string Author = "Azumatt";
         private const string ModGUID = Author + "." + ModName;
         private static string ConfigFileName = ModGUID + ".cfg";
@@ -23,11 +23,9 @@ namespace GiveEmTheBoot
         internal static string ConnectionError = "";
         private readonly Harmony _harmony = new(ModGUID);
 
-        public static readonly ManualLogSource GiveEmTheBootLogger =
-            BepInEx.Logging.Logger.CreateLogSource(ModName);
+        public static readonly ManualLogSource GiveEmTheBootLogger = BepInEx.Logging.Logger.CreateLogSource(ModName);
 
-        private static readonly ConfigSync ConfigSync = new(ModGUID)
-            { DisplayName = ModName, CurrentVersion = ModVersion, MinimumRequiredVersion = ModVersion };
+        private static readonly ConfigSync ConfigSync = new(ModGUID) { DisplayName = ModName, CurrentVersion = ModVersion, MinimumRequiredVersion = ModVersion };
 
         public enum Toggle
         {
@@ -37,8 +35,7 @@ namespace GiveEmTheBoot
 
         public void Awake()
         {
-            _serverConfigLocked = config("1 - General", "Lock Configuration", Toggle.On,
-                "If on, the configuration is locked and can be changed by server admins only.");
+            _serverConfigLocked = config("1 - General", "Lock Configuration", Toggle.On, "If on, the configuration is locked and can be changed by server admins only.");
             _ = ConfigSync.AddLockingConfigEntry(_serverConfigLocked);
             
             skillBonus = config("2 - Adjustments", "Skill Bonus", 50F, "How much bonus knockback force to add at 100 Unarmed skill. Scales proportionally with different skill levels.");
