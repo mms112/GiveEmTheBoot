@@ -49,8 +49,8 @@ public static class KeyboardExtensions
 
 public static class PrefabGetter
 {
-    private static Transform pingVisual;
-    private static GameObject pingAudio;
+    private static Transform? pingVisual;
+    private static GameObject? pingAudio;
 
     public static Transform getPingVisual()
     {
@@ -80,7 +80,7 @@ public static class PrefabGetter
         return pingVisual;
     }
 
-    public static GameObject getPingAudio()
+    public static GameObject? getPingAudio()
     {
         if (pingAudio == null)
         {

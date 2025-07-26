@@ -32,7 +32,7 @@ namespace GiveEmTheBoot.Patches
                     kickInput = true;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 if (!invalidKey)
                 {

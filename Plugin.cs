@@ -127,14 +127,6 @@ namespace GiveEmTheBoot
             return config(group, name, value, new ConfigDescription(description), synchronizedSetting);
         }
 
-        private class ConfigurationManagerAttributes
-        {
-            [UsedImplicitly] public int? Order;
-            [UsedImplicitly] public bool? Browsable;
-            [UsedImplicitly] public string? Category;
-            [UsedImplicitly] public Action<ConfigEntryBase>? CustomDrawer;
-        }
-
         #endregion
     }
 }
