@@ -46,9 +46,9 @@ namespace GiveEmTheBoot
             xPushFactor = config("2 - Adjustments", "X Push Factor", 0.375F, "This is a direct multiplier against the x value in which the creature/player will be pushed when kicked.");
             yPushFactor = config("2 - Adjustments", "Y Push Factor", 0.375F, "This is a direct multiplier against the y value in which the creature/player will be pushed when kicked.");
             zPushFactor = config("2 - Adjustments", "Z Push Factor", 1.0F, "This is a direct multiplier against the z value in which the creature/player will be pushed when kicked.");
-            showDialog = config("3 - Features", "Show Dialog", Toggle.On, "Whether or not to show a funny message when your kick connects to an enemy.", false);
+            showDialog = config("3 - Features", "Show Dialog", Toggle.Off, "Whether or not to show a funny message when your kick connects to an enemy.", false);
             dialogSelection = config("3 - Features", "Dialog Selection", "PUNT|WHAM|BAM|YEET|SEEYA|BYE|HOOF|BOOT|GTFO|BEGONE", "Words that can appear if the Show Dialog option is enabled, separated by | character.", false);
-            kickHotkey = config("3 - Features", "Kick Hotkey", new KeyboardShortcut(KeyCode.G), "Customizable kick hotkey so you can kick while holding a weapon. If you want to use a mouse key, include a space: mouse 3, for example. Valid inputs: https://docs.unity3d.com/ScriptReference/KeyCode.html", false);
+            kickHotkey = config("3 - Features", "Kick Hotkey", new KeyboardShortcut(KeyCode.F), "Customizable kick hotkey so you can kick while holding a weapon. If you want to use a mouse key, include a space: mouse 3, for example. Valid inputs: https://docs.unity3d.com/ScriptReference/KeyCode.html", false);
 
             
             Assembly assembly = Assembly.GetExecutingAssembly();
